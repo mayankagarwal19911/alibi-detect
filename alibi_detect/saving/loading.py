@@ -94,6 +94,7 @@ def load_detector(filepath: Union[str, os.PathLike], enable_unsafe_loading: bool
     Loaded outlier or adversarial detector object.
     """
     filepath = Path(filepath)
+    loggint.info("File Path is {}".format(filepath))        
     # If reference is a 'config.toml' itself, pass to new load function
     if filepath.name == 'config.toml':
         return _load_detector_config(filepath, enable_unsafe_loading=enable_unsafe_loading)
